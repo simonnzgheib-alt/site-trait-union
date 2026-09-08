@@ -32,7 +32,8 @@ body{font-family:'Nunito',sans-serif;color:var(--ink);background:var(--cream);li
 
 /* NAV */
 .nav{display:flex;justify-content:space-between;align-items:center;padding:0 44px;height:84px;background:rgba(245,242,233,0.94);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100;border-bottom:1px solid var(--cream-dd);}
-.nav-logo img{height:50px;width:auto;}
+.nav-logo img{height:46px;width:auto;}
+.nav-tagline{font-size:11px;font-weight:600;color:var(--green-d);letter-spacing:0.01em;max-width:340px;line-height:1.2;}
 .nav-right{display:flex;align-items:center;gap:26px;}
 .nav-link{font-size:14px;font-weight:700;color:var(--ink-soft);text-decoration:none;transition:color .2s;}
 .nav-link:hover{color:var(--green-d);}
@@ -62,6 +63,9 @@ body{font-family:'Nunito',sans-serif;color:var(--ink);background:var(--cream);li
 .hero-deco2{position:absolute;bottom:-22px;left:-22px;width:76px;height:76px;background:var(--yellow);border-radius:50%;opacity:0.7;z-index:-1;}
 
 /* BANDEAU */
+
+.expertise-bar{background:var(--green-ll);text-align:center;padding:9px 20px;font-size:13px;font-weight:700;color:var(--green-dd);letter-spacing:0.02em;border-bottom:1px solid var(--cream-dd);}
+@media(max-width:900px){.expertise-bar{font-size:11.5px;padding:8px 14px;}}
 .schools{background:var(--green-dd);padding:22px 44px;}
 .schools-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:34px;flex-wrap:wrap;}
 .schools-label{font-size:12px;font-weight:800;color:var(--green-l);text-transform:uppercase;letter-spacing:0.1em;}
@@ -189,6 +193,11 @@ body{font-family:'Nunito',sans-serif;color:var(--ink);background:var(--cream);li
 .footer-social svg{width:19px;height:19px;}
 .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:rgba(255,255,255,0.4);}
 
+
+.reserve-float{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--green);color:#fff;padding:15px 30px;border-radius:30px;font-size:15px;font-weight:800;text-decoration:none;box-shadow:0 8px 28px rgba(60,90,76,0.35);z-index:999;opacity:0;transition:all .4s ease;white-space:nowrap;}
+.reserve-float.show{opacity:1;transform:translateX(-50%) translateY(0);}
+.reserve-float:hover{background:var(--green-d);}
+@media(max-width:900px){.reserve-float{bottom:20px;padding:13px 24px;font-size:14px;}}
 .wa-float{position:fixed;bottom:26px;right:26px;width:62px;height:62px;background:var(--wa);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,0.45);cursor:pointer;transition:transform .2s;z-index:1000;text-decoration:none;}
 .wa-float:hover{transform:scale(1.08);}
 
@@ -224,6 +233,7 @@ body{font-family:'Nunito',sans-serif;color:var(--ink);background:var(--cream);li
   .nav-logo img{height:40px !important;}
   .nav{padding:0 14px !important;}
   .hero{padding-top:22px !important;}
+  .nav-logo img{height:40px !important;}
   .nav-right{gap:8px !important;}
   .lbtn{padding:5px 10px !important;font-size:11px !important;}
 }
@@ -237,9 +247,14 @@ body{font-family:'Nunito',sans-serif;color:var(--ink);background:var(--cream);li
     <a class="nav-link" href="#approche" data-fr="Notre approche" data-en="Our approach">Notre approche</a>
     <a class="nav-link" href="#services" data-fr="Nos services" data-en="Our services">Nos services</a>
     <div class="lang-pill"><button class="lbtn active" onclick="setLang('fr',this)">FR</button><button class="lbtn" onclick="setLang('en',this)">EN</button></div>
-    <a class="nav-cta" href="#contact"><span class="cta-long" data-fr="Réserver une rencontre" data-en="Book a meeting">Réserver une rencontre</span><span class="cta-short" data-fr="Contact" data-en="Contact">Contact</span></a>
+    
   </div>
 </nav>
+
+<div class="expertise-bar">
+  <span data-fr="Plus de 10 ans d'expérience dans le milieu scolaire" data-en="Over 10 years of experience in education">Plus de 10 ans d'expérience dans le milieu scolaire</span>
+</div>
+
 
 <section class="hero">
   <div class="hero-inner">
@@ -248,8 +263,8 @@ body{font-family:'Nunito',sans-serif;color:var(--ink);background:var(--cream);li
       <h1 data-fr="Un espace pensé<br>pour <span>chaque enfant</span>" data-en="A space designed<br>for <span>every child</span>">Un espace pensé<br>pour <span>chaque enfant</span></h1>
       <p class="hero-desc" data-fr="Après l'école, votre enfant mérite bien plus qu'une simple aide aux devoirs. Un accompagnement personnalisé, bienveillant et inclusif, adapté à son rythme, ses besoins et son potentiel." data-en="After school, your child deserves much more than simple homework help. Personalized, caring and inclusive support, adapted to their pace, needs and potential.">Après l'école, votre enfant mérite bien plus qu'une simple aide aux devoirs. Un accompagnement personnalisé, bienveillant et inclusif, adapté à son rythme, ses besoins et son potentiel.</p>
       <div class="hero-btns">
-        <a class="btn-p" href="#contact" data-fr="Réserver une rencontre" data-en="Book a meeting">Réserver une rencontre</a>
-        <a class="btn-s" href="#approche" data-fr="Notre approche" data-en="Our approach">Notre approche</a>
+        <a class="btn-p" href="#approche" data-fr="Découvrir notre approche" data-en="Discover our approach">Découvrir notre approche</a>
+        <a class="btn-s" href="#services" data-fr="Nos services" data-en="Our services">Nos services</a>
       </div>
     </div>
     <div class="hero-visual">
@@ -449,6 +464,9 @@ body{font-family:'Nunito',sans-serif;color:var(--ink);background:var(--cream);li
   </div>
 </div></footer>
 
+<a class="reserve-float" id="reserveFloat" href="#contact">
+  <span data-fr="Réserver une rencontre" data-en="Book a meeting">Réserver une rencontre</span>
+</a>
 <a class="wa-float" id="waFloat" href="https://wa.me/96179430533?text=Bonjour%2C%20je%20souhaite%20avoir%20des%20informations%20sur%20le%20Centre%20Trait%20d'Union" target="_blank"><svg viewBox="0 0 24 24" fill="white"><path d="M17.5 14.4c-.3-.15-1.7-.85-2-.95-.25-.1-.45-.15-.6.15-.2.3-.7.95-.85 1.1-.15.2-.3.2-.6.05-.3-.15-1.25-.45-2.4-1.5-.9-.8-1.5-1.75-1.65-2.05-.15-.3 0-.45.15-.6.15-.15.3-.35.45-.55.15-.2.2-.3.3-.5.1-.2.05-.4-.05-.55-.1-.15-.6-1.45-.85-2-.2-.5-.4-.45-.55-.45h-.5c-.2 0-.5.05-.75.35-.25.3-1 .95-1 2.35s1.05 2.75 1.2 2.95c.15.2 2.05 3.15 5 4.4.7.3 1.25.5 1.65.65.7.2 1.35.2 1.85.1.55-.05 1.7-.7 1.95-1.35.25-.65.25-1.25.15-1.35-.1-.1-.3-.15-.6-.3M12 2C6.5 2 2 6.5 2 12c0 1.85.5 3.6 1.4 5.1L2 22l5-1.35c1.45.8 3.15 1.25 4.9 1.25h.05c5.5 0 10-4.5 10-10S17.5 2 12 2"/></svg></a>
 
 <script>
@@ -469,5 +487,23 @@ function validate(d){if(!d.prenom||!d.nom){alert(T[LANG].alertChild);return fals
 function sendWhatsApp(){const d=collect();if(!validate(d))return;window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(buildText(d))}`,'_blank');}
 async function sendEmail(){const d=collect();if(!validate(d))return;const btn=document.querySelector('.btn-send');const o=btn.textContent;btn.disabled=true;btn.textContent=LANG==='en'?'Sending...':'Envoi...';const p={_subject:(LANG==='en'?`Registration request — ${d.prenom} ${d.nom}`:`Demande d'inscription — ${d.prenom} ${d.nom}`),"Langue":LANG.toUpperCase(),"Enfant - Prénom":d.prenom,"Enfant - Nom":d.nom,"Date de naissance":d.dob,"Âge":d.age,"Niveau":d.niveau,"École":d.ecole,"Type d'accompagnement":(T['fr'].types[d.type]||d.type),"Format":(T['fr'].formats[d.format]||d.format),"Difficultés":d.diffs,"Modalité rendez-vous":(T['fr'].mods[d.modalite]||d.modalite),"Disponibilités":d.dispo,"Repas du midi":(T['fr'].repas[d.repas]||d.repas),"Informations":d.message,"Lien parent":(T['fr'].liens[d.lien]||d.lien),"Parent - Prénom":d.pprenom,"Parent - Nom":d.pnom,"Téléphone":d.tel,"Email":d.email,"email":d.email,"message":buildText(d)};try{const res=await fetch(FORMSPREE,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(p)});if(res.ok){showConfirmation();}else{btn.disabled=false;btn.textContent=o;alert(LANG==='en'?"Something went wrong. Please try WhatsApp.":"Une erreur s'est produite. Merci d'utiliser WhatsApp.");}}catch(e){btn.disabled=false;btn.textContent=o;alert(LANG==='en'?"Something went wrong. Please try WhatsApp.":"Une erreur s'est produite. Merci d'utiliser WhatsApp.");}}
 function showConfirmation(){const card=document.querySelector('.form-card');const fr=`<div style="text-align:center;padding:40px 10px;"><div style="width:76px;height:76px;background:var(--green-ll);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;"><span style="font-size:38px;color:var(--green-dd);">✓</span></div><h3 style="font-family:'Baloo 2',cursive;font-size:26px;font-weight:600;color:var(--green-dd);margin-bottom:12px;">Merci, votre demande est bien reçue !</h3><p style="font-size:15px;color:var(--ink-soft);max-width:400px;margin:0 auto;line-height:1.7;">Nous vous répondrons sous 24h pour convenir ensemble d'une première rencontre.<br><br>À très bientôt,</p><p style="font-family:'Baloo 2',cursive;font-size:18px;font-weight:600;color:var(--green-dd);margin-top:14px;">L'équipe Trait d'Union</p></div>`;const en=`<div style="text-align:center;padding:40px 10px;"><div style="width:76px;height:76px;background:var(--green-ll);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;"><span style="font-size:38px;color:var(--green-dd);">✓</span></div><h3 style="font-family:'Baloo 2',cursive;font-size:26px;font-weight:600;color:var(--green-dd);margin-bottom:12px;">Thank you, your request has been received!</h3><p style="font-size:15px;color:var(--ink-soft);max-width:400px;margin:0 auto;line-height:1.7;">We will reply within 24h to arrange a first meeting together.<br><br>See you soon,</p><p style="font-family:'Baloo 2',cursive;font-size:18px;font-weight:600;color:var(--green-dd);margin-top:14px;">The Trait d'Union team</p></div>`;card.innerHTML=LANG==='en'?en:fr;card.scrollIntoView({behavior:'smooth',block:'center'});}
+</script>
+
+<script>
+(function(){
+  const rf=document.getElementById('reserveFloat');
+  const hero=document.querySelector('.hero');
+  const contact=document.getElementById('contact');
+  function onScroll(){
+    if(!rf||!hero)return;
+    const heroBottom=hero.getBoundingClientRect().bottom;
+    const contactTop=contact?contact.getBoundingClientRect().top:99999;
+    // show after hero is scrolled past, hide when contact section reached
+    if(heroBottom<0 && contactTop>300){ rf.classList.add('show'); }
+    else { rf.classList.remove('show'); }
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+})();
 </script>
 </body></html>
